@@ -23,4 +23,14 @@
     return (_width*_height*_length);
 }
 
+-(float)fitBoxInside:(Box *)otherBox{
+    float vol1 = [self findVolume];
+    float vol2 = [otherBox findVolume];
+    
+    if(vol1 > vol2){
+        return (vol1/vol2);
+    }
+    return (vol2/vol1);
+}
+
 @end
